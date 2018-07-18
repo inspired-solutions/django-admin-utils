@@ -1,34 +1,32 @@
 Metadata-Version: 1.1
 Name: inspired-django-utils
-Version: 0.1
+Version: 0.3
 Summary: A collection of Django utils
 Home-page: https://github.com/inspired-solutions/django-utils
 Author: Sergio Melendez
 Author-email: hlpse@hotmail.com
 License: MIT License
-Description: =====================
-        IS Django Utils
-        by Inspired Solutions
-        =====================
+Description: # IS Django Utils
         
         Django Utils is a collection of utils for Django.
         
-        Quick start
-        -----------
+        ## Quick start
         
         1. Add "django-utils" to your INSTALLED_APPS setting like this:
         
+        ```
             INSTALLED_APPS = [
                 ...
                 'django_utils',
                 ...
             ]
+        ```
         
-        AdminWithSelectRelated
-        ----------------------
+        ## AdminWithSelectRelated
         
         - Usage:
         
+        ```
             from django_utils.admin import AdminWithSelectRelated
             
             class AlumnoAdmin(AdminWithSelectRelated):
@@ -40,31 +38,35 @@ Description: =====================
                 inlines = (AlumnoServicioInlineAdmin, AlumnoItemInlineAdmin, )
         
                 list_select_related = ('estudiante__profile', 'seccion__grado__anio_lectivo', )
+        ```
         
-        AdminInlineWithSelectRelated
-        ----------------------------
+        ## AdminInlineWithSelectRelated
         
         - Usage:
         
+        ```
             from django_utils.admin import AdminInlineWithSelectRelated
             
             class AlumnoItemInlineAdmin(AdminInlineWithSelectRelated):
                 model = AlumnoItem
         
                 list_select_related = ('alumno__estudiante__profile', 'item__anio_lectivo', )
+        ```
         
-        FilterWithSelectRelated
-        -----------------------
+        ## FilterWithSelectRelated
         
+        ```
             from django_utils.admin import FilterWithSelectRelated
             
             class SeccionFilter(FilterWithSelectRelated):
                 list_select_related = ('grado', )
+        ```
         
 Platform: UNKNOWN
 Classifier: Environment :: Web Environment
 Classifier: Framework :: Django
 Classifier: Framework :: Django :: 1.9
+Classifier: Framework :: Django :: 2.0
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
