@@ -31,4 +31,8 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
+    install_requires=[
+        'Django>=1.9,<=2.0.6',
+        'djangorestframework>=3.8'
+    ],
 )
